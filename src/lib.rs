@@ -18,7 +18,7 @@ pub fn make_main(item: TokenStream) -> TokenStream {
         #[cfg(test)]
         #[test]
         fn test() {
-            let input = std::fs::read_to_string("../test.txt").expect("Error reading test input");
+            let input = std::fs::read_to_string("./test.txt").expect("Error reading test input");
             assert_eq!(compute(input).to_string(), #item);
         }
     };
