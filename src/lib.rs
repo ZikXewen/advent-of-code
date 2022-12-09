@@ -1,7 +1,8 @@
 use proc_macro::TokenStream;
 use quote::quote;
 
-/// Creates a `main` function executing the `compute` function in your current file against `input.txt`
+/// Creates a `main` function executing the `compute` function in your current file against `input.txt`.
+///
 /// If called with a string, this will also create a `test` function `compute`ing againt `test.txt`
 #[proc_macro]
 pub fn make_main(item: TokenStream) -> TokenStream {
