@@ -36,11 +36,8 @@ fn main() {
         return;
     }
     let boilerplate = r#"
-use aoc::make_main;
-
-fn compute(input: String) -> 
-
-make_main! {}
+#[aoc::main]
+fn main() {}
 "#
     .trim();
     let path = format!("./src/bin/y{}d{}p1.rs", year, day);
@@ -52,7 +49,7 @@ make_main! {}
     if open.unwrap_or(false) {
         Command::new("code.cmd")
             .arg("-g")
-            .arg(path + ":3:30")
+            .arg(path + ":2:12")
             .spawn()
             .unwrap();
     }
