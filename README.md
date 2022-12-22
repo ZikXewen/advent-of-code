@@ -6,6 +6,8 @@ This is my workstation for Advent of Code.
 
 If you are looking at a code with `make_main!` macro, that is deprecated. See below for [How I used to use this](#how-i-used-to-use-this-deprecated).
 
+TL;DR: Check out [examples](examples). That should almost clarify everything.
+
 For an actual competition, I can use the [quick setup](#pulling) for a headstart. That requires some daily configuration though.
 
 For casual use, I can just create a new binary in `src/bin` and use the `aoc::main` macro to ease the work of writing the main and test functions. Check out [its documentation](src/lib.rs#41) for more information.
