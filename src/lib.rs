@@ -51,6 +51,7 @@ pub fn make_main(item: TokenStream) -> TokenStream {
 /// ```rust
 /// #[aoc::main(answer)]
 /// fn main() {
+///    println!(input);
 ///    "answer"
 /// }
 /// ```
