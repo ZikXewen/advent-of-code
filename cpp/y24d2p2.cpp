@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define vat(rem, po) v[po+(po>=rem)]
+#define vat(rem, po) v[po + (po >= rem)]
 
 using namespace std;
 
