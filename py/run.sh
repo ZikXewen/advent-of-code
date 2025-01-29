@@ -3,8 +3,9 @@
 set -e
 
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <code_path> [-f]"
-  echo "  -f  Skip Test"
+  echo "Usage: $0 <code_path> [flags]"
+  echo "  -f  Skip test"
+  echo "  -s  Print output to stdout instead of clipboard"
   exit 1
 fi
 
@@ -18,7 +19,7 @@ if [[ ! -f in.txt ]] then
   exit 1
 fi
 
-if [[ ! $2 = "-f" ]] then
+if [[ ! ($2 = "-f" || $3 = "-f") ]] then
   if [[ ! -f test_in.txt ]] then
     echo "test_in.txt does not exist."
     exit 1
@@ -36,7 +37,12 @@ if [[ ! $2 = "-f" ]] then
   echo "test passed! running with real input..."
 fi
 
-python3 "$1" < in.txt | clip.exe
+if [[ $2 = "-s" || $3 = "-s" ]] then
+  python3 "$1" < in.txt
+else
+  python3 "$1" < in.txt | clip.exe
+fi
+
 if [[ $? -ne 0 ]] then
   echo "an error occured while running."
   exit 1
